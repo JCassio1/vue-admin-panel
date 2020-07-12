@@ -95,6 +95,18 @@ button {
   margin-bottom: 40px;
 }
 
+.login-button {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.Hover:hover {
+  background: black;
+
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
 a {
   line-height: 25px;
   font-size: 16px;
