@@ -38,7 +38,7 @@
 
 <script>
 import ThemeSwitch from "@/components/ThemeSwitch";
-import apiConfig from "@/Git/.gitignore";
+import apiConfig from "@/apiKeys";
 
 export default {
   name: "Request",
@@ -63,11 +63,10 @@ export default {
       const email = this.email;
 
       // Slack API Here
-      let slackURLResource = new URL(`${apiConfig.slackAPI}`);
+      let slackURLResource = new URL("https://slack.com/api/chat.postMessage");
 
       const data = {
-        token:
-          "xoxp-1253458881249-1240833880194-1253513951761-d8b895d8837b3e499e939bfa2117dba9",
+        token: `${apiConfig.slackAPI}`,
         channel: "qr-request",
         text: `${email} has requested admin access to Código QR. Please go to netlify to invite them`
       };
