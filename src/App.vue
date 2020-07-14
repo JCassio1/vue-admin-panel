@@ -12,7 +12,7 @@ export default {
   mounted() {
     const isDarkMode = this.$store.getters.isDarkMode;
     document.body.style.background = isDarkMode ? "#212c4f" : "#f0f3f5";
-  }
+  },
 };
 </script>
 
@@ -103,9 +103,8 @@ button {
 .Hover:hover {
   background: black;
 
-  transform: translateY(-5px) scale(1.05) 1.05;
-  // -webkit-transition: transform 0.35s;
-  box-shadow: 0 2 2rem rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 
 a {
@@ -137,7 +136,6 @@ a {
 .light-field {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.3);
@@ -147,7 +145,6 @@ a {
 .dark-field {
   background: rgba(198, 208, 235, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
-  color: black;
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
