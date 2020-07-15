@@ -79,7 +79,7 @@ export default {
         .login(email, password, true)
         .then(response => {
           this.$router.replace("/");
-          print(response);
+          response == response;
         })
         .catch(error => {
           alert("Error: " + error);
