@@ -3,13 +3,8 @@
     <Header />
     <div class="container">
       <div class="spread">
-        <h1 :class="{ dark: !isDarkMode, light: isDarMode }">
-          Traffic Overview
-        </h1>
-        <div
-          class="toggle"
-          :class="{ 'light-box': isDarkMode, 'dark-box': !isDarkMode }"
-        >
+        <h1 :class="{ dark: !isDarkMode, light: isDarMode }">Traffic Overview</h1>
+        <div class="toggle" :class="{ 'light-box': isDarkMode, 'dark-box': !isDarkMode }">
           <div ref="days" class="days" @click="toggleDays">Days</div>
           <div ref="weeks" class="weeks" @click="toggleWeeks">Weeks</div>
           <div ref="months" class="months" @click="toggleMonths">Months</div>
@@ -24,22 +19,25 @@
         :series="series"
       ></apexchart>
     </div>
+    <googleData />
   </div>
 </template>
 
 <script>
 import VueApexCharts from "vue-apexcharts";
 import Header from "@/components/Header.vue";
+import googleData from "@/components/GoogleData.vue";
 export default {
   name: "Home",
   computed: {
     isDarkMode() {
       return this.$store.getters.isDarkMode;
-    },
+    }
   },
   components: {
     Header,
     apexchart: VueApexCharts,
+    googleData
   },
   data() {
     return {
@@ -47,48 +45,48 @@ export default {
         colors: ["#14f1d9", "#7b42f6"],
         legend: {
           labels: {
-            colors: [this.$store.getters.isDarkMode ? "white" : "black"],
+            colors: [this.$store.getters.isDarkMode ? "white" : "black"]
           },
-          position: "top",
+          position: "top"
         },
         tooltip: {
-          theme: "dark",
+          theme: "dark"
         },
         grid: {
           xaxis: {
             lines: {
-              show: true,
-            },
+              show: true
+            }
           },
           yaxis: {
             lines: {
-              show: false,
-            },
-          },
+              show: false
+            }
+          }
         },
         chart: {
-          id: "users",
+          id: "users"
         },
         xaxis: {
-          type: "datetime",
-        },
+          type: "datetime"
+        }
       },
       series: [
         {
           name: "active users",
           data: [
             [new Date("January 1, 2019"), 30],
-            [new Date("January 5, 2019"), 40],
-          ],
+            [new Date("January 5, 2019"), 40]
+          ]
         },
         {
           name: "new users",
           data: [
             [new Date("January 1, 2019"), 80],
-            [new Date("January 5, 2019"), 20],
-          ],
-        },
-      ],
+            [new Date("January 5, 2019"), 20]
+          ]
+        }
+      ]
     };
   },
   methods: {
@@ -130,8 +128,8 @@ export default {
       this.$refs.days.style.color = "#5b6175";
       this.$refs.days.style.background = "none";
       this.$refs.days.borderRadius = "none";
-    },
-  },
+    }
+  }
 };
 </script>
 
