@@ -3,7 +3,7 @@
     <Header />
     <div class="container">
       <div class="spread">
-        <h1 :class="{ dark: !isDarkMode, light: isDarMode }">Traffic Overview</h1>
+        <h1 :class="{ 'dark': !isDarkMode, 'light': isDarMode }">Traffic Overview</h1>
         <div class="toggle" :class="{ 'light-box': isDarkMode, 'dark-box': !isDarkMode }">
           <div ref="days" class="days" @click="toggleDays">Days</div>
           <div ref="weeks" class="weeks" @click="toggleWeeks">Weeks</div>
@@ -20,6 +20,7 @@
       ></apexchart>
     </div>
     <googleData />
+    <googleDataLight />
   </div>
 </template>
 
@@ -27,6 +28,7 @@
 import VueApexCharts from "vue-apexcharts";
 import Header from "@/components/Header.vue";
 import googleData from "@/components/GoogleData.vue";
+import googleDataLight from "@/components/GoogleDataLight.vue";
 export default {
   name: "Home",
   computed: {
@@ -37,7 +39,8 @@ export default {
   components: {
     Header,
     apexchart: VueApexCharts,
-    googleData
+    googleData,
+    googleDataLight
   },
   data() {
     return {
@@ -145,14 +148,14 @@ export default {
   width: 100%;
 }
 
-.h1.dark {
+h1.dark {
   font-size: 30px;
   line-height: 43px;
   font-weight: bold;
   color: black;
 }
 
-.h1.light {
+h1.light {
   font-size: 30px;
   line-height: 43px;
   font-weight: bold;
