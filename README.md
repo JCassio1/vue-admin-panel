@@ -26,3 +26,16 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## 🚀 Tech
+1. Vue.JS;
+2. Firebase;
+3. Slack;
+
+
+### Remaining to do
+1. Allow administrator to add, remove and check status of users;
+2. Update items on firebase database;
+3. Fix bug related to bugs;
+4. Fix environment variables 
