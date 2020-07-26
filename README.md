@@ -1,5 +1,9 @@
 # vue-admin-panel
 
+<p align="center">
+  <img src="https://github.com/JCassio1/vue-admin-panel/blob/master/login-page.png?raw=true" style="width: 30%; height: 30%"/>
+</p>
+
 ## Project setup
 ```
 yarn install
